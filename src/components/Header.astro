@@ -1,0 +1,71 @@
+<header class="flex flex-col justify-center items-center md:flex-row md:justify-around">
+    <figure id="about-img" class="overflow-hidden rounded-lg shadow-lg bg-transparent transform transition-transform duration-500">
+        <img id="main-img" src="/veronica2.JPG" class="rounded-b-2xl md:rounded-b-full bg-transparent -mt-1 size-14 md:size-24 lg:size-28 object-contain cursor-pointer transition-transform duration-500" alt="Veronica photo"/>
+    </figure>
+    <button id="menu-button" class="block md:hidden text-secondary focus:outline-none mt-4 md:mt-0">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+    </button>
+    <nav id="nav-menu" class="hidden flex-col md:flex md:flex-row mt-2 md:mt-0 space-y-4 md:space-y-0 md:space-x-6 items-center">
+        <a class="no-underline text-secondary text-base md:text-xl lg:text-2xl hover:text-primary transition-transform duration-500 transform" href="#top">Inicio</a>
+        <a class="no-underline text-secondary text-base md:text-xl lg:text-2xl hover:text-primary transition-transform duration-500 transform" href="#experiencia">Experiencia</a>
+        <a class="no-underline text-secondary text-base md:text-xl lg:text-2xl hover:text-primary transition-transform duration-500 transform" href="#proyectos">Proyectos</a>
+        <a id="about-link" class="no-underline text-secondary text-base md:text-xl lg:text-2xl hover:text-primary transition-transform duration-500 transform" href="#conoceme">Conoceme</a>
+        <a class="no-underline text-secondary text-base md:text-xl lg:text-2xl hover:text-primary transition-transform duration-500 transform" href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<script>
+    const aboutImg = document.getElementById('about-img');
+    const mainImg = document.getElementById('main-img') as HTMLImageElement;;
+    const aboutLink = document.getElementById('about-link');
+    const menuButton = document.getElementById('menu-button');
+    const navMenu = document.getElementById('nav-menu');
+
+    aboutImg.addEventListener('mouseover', function() {
+        aboutLink.innerText = 'Sobre mí';
+        aboutLink.classList.remove('no-underline');
+        aboutLink.classList.add('underline');
+
+        // Agregar clase de rotación
+        mainImg.classList.add('rotate-180');
+    });
+
+    aboutImg.addEventListener('mouseout', function() {
+        aboutLink.innerText = 'Conoceme';
+        aboutLink.classList.remove('underline');
+
+        // Remover clase de rotación
+        mainImg.classList.remove('rotate-180');
+    });
+
+    aboutImg.addEventListener('click', function() {
+        window.location.href = '/about';
+    });
+
+    // Cambiar la imagen al final de la animación
+    mainImg.addEventListener('transitionend', function() {
+        if (mainImg.classList.contains('rotate-180')) {
+            mainImg.src = "/veronica.JPG";
+        } else {
+            mainImg.src = "/veronica2.JPG";
+        }
+    });
+
+    // Toggle mobile menu
+    menuButton.addEventListener('click', function() {
+        navMenu.classList.toggle('hidden');
+        navMenu.classList.toggle('flex');
+    });
+</script>
+
+<style>
+    .rotate-180 {
+        transform: rotateY(180deg);
+    }
+</style>
+   
+
+
+

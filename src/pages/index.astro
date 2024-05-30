@@ -1,0 +1,68 @@
+---
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
+import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
+import Section from '../components/Section.astro';
+import Github from '../icons/Github.astro';
+import Gmail from '../icons/Gmail.astro';
+import Linkedin from '../icons/Linkedin.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Veronica Garcia Portfolio - Desarrollador y Programador Web - Frontend" description="Frontend Developer con experiencia en la creación de experiencias web atractivas y funcionales. Mi objetivo es combinar diseño creativo con desarrollo técnico para crear sitios web hermosos y fáciles de usar.">
+	<main id="top" class="p-6">
+		<section class="w-full min-h-screen md:w-[740px] lg:w-[800px] mx-auto py-24">
+			<h1 class="text-white text-lg md:text-2xl lg:text-4xl text-center md:text-start font-semibold">Buenas, soy Vero!</h1>
+			<h2 class="text-white text-base md:text-lg lg:text-xl mt-8 md:mt-12 text-justify md:text-center text-pretty">Entre muchas otras cosas soy <span class="text-text">una Frontend Developer Argentina</span> que actualmente vive en Brasil. Mi pasión por la tecnología y el diseño me ha llevado a especializarme en la creación de experiencias web atractivas y funcionales.</h2>
+			<h2 class="text-white text-base md:text-lg lg:text-xl text-justify md:text-center">Te invito a que me conozcas un poco!</h2>
+			<ul class="flex justify-evenly mt-8 md:mt-16">
+				<li class="mr-2">
+					<a class='flex flex-col items-center justify-center no-underline mx-auto text-secondary hover:text-text cursor-pointer text-base md:text-lg' href="https://www.linkedin.com/in/veronicaagarcia/" target="_blank" rel="noopener noreferrer">
+						<Linkedin class="size-7 md:size-14 text-secondary hover:text-text scale-100 hover:scale-110"/>
+						Linkedin
+					</a>
+				</li>
+				<li class="mr-2">
+					<a class='flex flex-col items-center justify-center no-underline mx-auto text-secondary hover:text-text cursor-pointer text-base md:text-lg' href="https://github.com/veronicaagarcia" target="_blank" rel="noopener noreferrer">
+						<Github class="size-7 md:size-14 text-secondary hover:text-text scale-100 hover:scale-110"/>
+						Github
+					</a>
+				</li>
+				<li class="mr-2">
+					<a class='flex flex-col items-center justify-center no-underline mx-auto text-secondary hover:text-text cursor-pointer text-base md:text-lg' href="mailto:veroagarcia90@gmail.com" target="_blank" rel="noopener noreferrer" title="veroagarcia90@gmail.com">
+						<Gmail class="size-7 md:size-14 text-secondary hover:text-text scale-100 hover:scale-110"/>
+						Gmail
+					</a>
+				</li>
+			</ul>
+		</section>
+
+		<Section id="experiencia" sectionName="Experiencia Laboral">
+			<Experience />
+		</Section>
+
+		<Section id="proyectos" sectionName="Proyectos">
+			<Projects />
+		</Section>
+
+		<Section id="conoceme" sectionName="Sobre mí">
+			<About />
+		</Section>
+
+		<Section id="contacto" sectionName="Contacto">
+			<Contact />
+		</Section>
+	</main>
+	<script>
+		document.querySelectorAll('#scrollToTop').forEach(function(button) {
+            button.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+	</script>
+</Layout>
+

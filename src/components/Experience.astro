@@ -1,0 +1,20 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const experience = [{
+    title:'Freelancer', date:'Mayo 2023 - Actualidad', description:'Construcción de interfaces de usuario interactivas y receptivas. Proyectos desafiantes que me permiten utilizar distintas tecnologías y tendencias para proporcionar la mejor experiencia de usuario posible.'
+},{
+    title:'No Country - Frontend Developer (Simulación Laboral)', date:'Febrero 2024 - Abril 2024', description:'Participé en dos programas, donde trabajé en un entorno ágil y colaborativo. Durante este período, desarrollé proyectos web reales que involucraban: Desarrollo de interfaces, Responsive Design, Optimización(mejoras en velocidad y rendimiento de las aplicaciones web), Colaboración en equipo (Trabajo conjunto con diseñadores, desarrolladores frontend y backend, QA Tester y otros miembros del equipo para garantizar la cohesión y eficiencia del proyecto).'
+}]
+---
+<ol class="relative border-s border-gray-200 dark:border-gray-700">          
+    {
+        experience.map(item =>
+
+        <li class="ml-12 mb-10 ms-6">            
+           <ExperienceItem {...item} />
+        </li>
+        )
+    }        
+</ol>
+
