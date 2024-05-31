@@ -27,16 +27,12 @@
         aboutLink.innerText = 'Sobre mí';
         aboutLink.classList.remove('no-underline');
         aboutLink.classList.add('underline');
-
-        // Agregar clase de rotación
         mainImg.classList.add('rotate-180');
     });
 
     aboutImg.addEventListener('mouseout', function() {
         aboutLink.innerText = 'Conoceme';
         aboutLink.classList.remove('underline');
-
-        // Remover clase de rotación
         mainImg.classList.remove('rotate-180');
     });
 
@@ -44,7 +40,6 @@
         window.location.href = '/about';
     });
 
-    // Cambiar la imagen al final de la animación
     mainImg.addEventListener('transitionend', function() {
         if (mainImg.classList.contains('rotate-180')) {
             mainImg.src = "/veronica.JPG";
@@ -53,7 +48,6 @@
         }
     });
 
-    // Toggle mobile menu
     menuButton.addEventListener('click', function() {
         navMenu.classList.toggle('hidden');
         navMenu.classList.toggle('flex');
