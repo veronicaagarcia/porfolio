@@ -65,10 +65,10 @@ function Form() {
     };
 
     return (
-        <div className='py-1 px-0 md:px-2 h-72 bg-contrast rounded-lg  w-full mx-auto md:w-3/5 hover:opacity-90 hover:shadow-2xl shadow-black opacity-85'>
+        <div className='py-1 px-0 md:px-2 h-72 bg-secondary-light dark:bg-secondary-dark rounded-lg w-full mx-auto md:w-3/5 hover:opacity-90 hover:shadow-2xl shadow-black opacity-85 transition-all duration-300'>
             <form className='p-4 mx-auto w-11/12 h-80 flex flex-col justify-evenly' onSubmit={handleSubmit}>
                 <input
-                    className='appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                    className='appearance-none border rounded w-full py-2 px-3 text-text-light dark:text-text-dark bg-background-light dark:bg-background-dark leading-tight focus:outline-none focus:shadow-outline transition-colors duration-300'
                     id='nombre'
                     type='text'
                     value={nombre}
@@ -77,7 +77,7 @@ function Form() {
                 />
 
                 <textarea
-                    className='appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                    className='appearance-none border rounded w-full py-2 px-3 text-text-light dark:text-text-dark bg-background-light dark:bg-background-dark leading-tight focus:outline-none focus:shadow-outline transition-colors duration-300'
                     id='message'
                     value={message}
                     onChange={handleMessageChange}
@@ -85,7 +85,7 @@ function Form() {
                 />
                 {messageError && <p className='text-secondary text-sm'>{messageError}</p>}
                 <input
-                    className='appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                    className='appearance-none border rounded w-full py-2 px-3 text-text-light dark:text-text-dark bg-background-light dark:bg-background-dark leading-tight focus:outline-none focus:shadow-outline transition-colors duration-300'
                     id='email'
                     type='email'
                     value={email}
@@ -95,9 +95,9 @@ function Form() {
                 {emailError && <p className='text-secondary text-sm'>{emailError}</p>}
                 <button
                     type='submit'
-                    className='group relative inline-flex mb-4 h-10 items-center justify-center overflow-hidden rounded-md bg-primary font-medium text-background transition hover:bg-secondary hover:text-white hover:scale-110'
+                    className='group relative inline-flex mb-4 h-10 items-center justify-center overflow-hidden rounded-md bg-primary-light dark:bg-primary-dark font-medium text-text-light dark:text-text-dark transition-all duration-300 hover:bg-accent-light dark:hover:bg-accent-dark hover:text-text-light dark:hover:text-text-dark hover:scale-105'
                 >
-                    <span className='relative'>Email me</span>
+                    <span className='relative'>Enviar mensaje</span>
                 </button>
                 <Toaster richColors position="top-center" />
             </form>

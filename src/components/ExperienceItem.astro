@@ -1,12 +1,19 @@
 ---
-const {title, date, description } = Astro.props
+const {title, date, description, list } = Astro.props
 ---
 
-<span class="absolute flex items-center justify-center size-6 md:size-8 bg-background rounded-full -start-3 md:-start-5 ring-8 ring-background dark:ring-gray dark:bg-secondary">
-    <svg class="size-2.5 md:size-5 text-secondary dark:text-text" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+<span class="absolute flex items-center justify-center size-6 md:size-9 bg-background rounded-full -start-3 md:-start-5 ring-8 ring-primary-light dark:ring-primary-dark dark:bg-secondary">
+    <svg class="size-2.5 md:size-4 text-secondary dark:text-text" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
         <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
     </svg>
 </span>
-<h3 class="flex items-center mb-1 text-lg lg:text-xl font-semibold text-text dark:text-secondary">{title}</h3>
-<time class="block mb-2 text-sm lg:text-base font-normal leading-none text-secondary dark:text-text">{date}</time>
-<p class="mb-4 text-base lg:text-lg font-normal text-white dark:text-gray text-pretty">{description}</p>
+<div class="ml-4 md:ml-6">
+    <h3 class="flex items-center mb-1 text-lg lg:text-xl font-semibold text-primary-light dark:text-primary-dark transition-colors duration-300">{title}</h3>
+    <time class="block mb-2 text-sm lg:text-base font-normal leading-none text-accent-light dark:text-accent-dark transition-colors duration-300">{date}</time>
+    <p class="mb-4 text-base lg:text-lg font-normal text-text-light dark:text-text-dark transition-colors duration-300 text-pretty">{description}</p>
+    <ul class="list-disc list-inside">
+        {list.map((lis) => (
+            <li class="mb-2">{lis}</li>
+        ))}
+    </ul>
+</div>

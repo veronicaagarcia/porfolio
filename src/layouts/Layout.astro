@@ -1,6 +1,7 @@
----
+<!-- ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
 import '@fontsource-variable/onest'
 
 interface Props {
@@ -16,26 +17,164 @@ const { title, description } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
+		<meta name="keywords" content="frontend, desarrollo web, UI/UX, diseño, React, Astro" />
+		<link rel="canonical" href="https://veronicagarciaporfolio.netlify.app/" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="flex flex-col justify-center bg-background bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]">
-		<Header />
-		<slot />
-		<Footer />
+	<body class="flex flex-col justify-center bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<Header />
+			<slot />
+			<Footer />
+			<ThemeToggle />
+		</div>
 	</body>
 </html>
 <style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+  
 	html {
-		font-family: "Onest Variable", system-ui, sans-serif;
-		scroll-behavior: smooth;
+	  font-family: "Onest Variable", system-ui, sans-serif;
 	}
 	
-	@media(prefers-reduced-motion: reduce) {
-		html{
-			scroll-behavior: auto;
-		}
+	h1, h2, h3 {
+	  font-family: "Poppins", sans-serif;
 	}
+  </style> -->
+
+  ---
+// Importa tus componentes
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
+import '@fontsource-variable/onest';
+
+interface Props {
+	title: string;
+	description: string
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description" content={description} />
+	<meta name="keywords" content="frontend, desarrollo web, UI/UX, diseño, React, Astro" />
+	<link rel="canonical" href="https://veronicagarciaporfolio.netlify.app/" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+	<meta name="generator" content={Astro.generator} />
+	<title>{title}</title>
+</head>
+<body class="relative flex flex-col justify-center bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300">
+	
+	<!-- Fondo con círculos animados -->
+	<div class="absolute inset-0 -z-10 overflow-hidden">
+		<!-- Círculos con animación y colores dinámicos -->
+		<div class="circle absolute rounded-full bg-accent-light dark:bg-accent-dark opacity-10"></div>
+		<div class="circle absolute rounded-full bg-primary-light dark:bg-primary-dark opacity-30"></div>
+		<div class="circle absolute rounded-full bg-text-light dark:bg-text-dark opacity-20"></div>
+		<div class="circle absolute rounded-full bg-accent-light dark:bg-accent-dark opacity-25"></div>
+		<div class="circle absolute rounded-full bg-primary-light dark:bg-primary-dark opacity-15"></div>
+		<div class="circle absolute rounded-full bg-text-light dark:bg-text-dark opacity-20"></div>
+		<div class="circle absolute rounded-full bg-accent-light dark:bg-accent-dark opacity-10"></div>
+		<div class="circle absolute rounded-full bg-accent-light dark:bg-accent-dark opacity-10"></div>
+	</div>
+
+	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+		<Header />
+		<slot />
+		<Footer />
+		<ThemeToggle />
+	</div>
+</body>
+</html>
+
+<style is:global>
+	/* Tipografía */
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+	html {
+		font-family: "Onest Variable", system-ui, sans-serif;
+	}
+	h1, h2, h3 {
+		font-family: "Poppins", sans-serif;
+	}
+
+	/* Animación de los círculos */
+	@keyframes float {
+		0% { transform: translate(0, 0); }
+		50% { transform: translate(20px, -30px); }
+		100% { transform: translate(0, 0); }
+	}
+
+	.circle {
+		width: 200px;
+		height: 200px;
+		animation: float 8s ease-in-out infinite;
+	}
+
+	/* Tamaños y posiciones específicas para los círculos */
+	.circle:nth-child(1) {
+		width: 50px;
+		height: 50px;
+		top: 5%;
+		left: 80%;
+		animation-duration: 15s;
+	}
+	.circle:nth-child(2) {
+		width: 250px;
+		height: 250px;
+		top: 10%;
+		left: 10%;
+		animation-duration: 10s;
+	}
+	.circle:nth-child(3) {
+		width: 160px;
+	height: 160px;
+	top: 85%;
+	left: 30%;
+	animation-duration: 14s;
+	}
+	.circle:nth-child(4) {
+		width: 200px;
+		height: 200px;
+		top: 30%;
+		left: 85%;
+		animation-duration: 9s;
+	}
+	.circle:nth-child(5) {
+	width: 180px;
+	height: 180px;
+	top: 70%;
+	left: 10%;
+	animation-duration: 11s;
+}
+.circle:nth-child(6) {
+	width: 220px;
+	height: 220px;
+	top: 40%;
+	left: 30%;
+	animation-duration: 13s;
+}
+.circle:nth-child(7) {
+	width: 150px;
+		height: 150px;
+		top: 60%;
+		left: 50%;
+		animation-duration: 12s;
+	
+}
+.circle:nth-child(8) {
+	width: 50px;
+	height: 50px;
+	top: 95%;
+	left: 80%;
+	animation-duration: 15s;
+}
 </style>

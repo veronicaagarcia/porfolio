@@ -2,12 +2,38 @@
 import ExperienceItem from "./ExperienceItem.astro"
 
 const experience = [{
-    title:'Freelancer', date:'Mayo 2023 - Actualidad', description:'Construcción de interfaces de usuario interactivas y receptivas. Desarrollando proyectos desafiantes que me permiten utilizar diversas tecnologías y tendencias para proporcionar la mejor experiencia de usuario posible. Además de las tareas propias de frontend, también he trabajado en propuestas de diseño, creación de videos y todo tipo de contenido visual. Me encargo de la creación completa de páginas web, desde el diseño hasta la implementación.'
-},{
-    title:'No Country - Frontend Developer (Simulación Laboral)', date:'Febrero 2024 - Abril 2024', description:'Participé en dos programas, donde trabajé en un entorno ágil y colaborativo. Durante este período, desarrollé proyectos web reales que involucraban: Desarrollo de interfaces, Responsive Design, Optimización(mejoras en velocidad y rendimiento de las aplicaciones web), Colaboración en equipo (Trabajo conjunto con diseñadores, desarrolladores frontend y backend, QA Tester y otros miembros del equipo para garantizar la cohesión y eficiencia del proyecto).'
+    title:'INNOVATEProweb - UI/UX Team Leader y Frontend Developer', 
+    date:'Junio 2024 - Actualidad', 
+    description:'Como parte del equipo de INNOVATEProweb, lidero el área de UI/UX y realizo desarrollo frontend. Mis responsabilidades incluyen:',
+    list:[
+        'Liderazgo en Diseño UI/UX: Dirijo el equipo de diseño UX/UI, asegurando la creación de interfaces intuitivas y atractivas. Defino estrategias de diseño que garantizan calidad y coherencia en la experiencia del usuario.',
+        'Colaboración Interdisciplinaria: Trabajo estrechamente con desarrolladores para implementar soluciones efectivas y optimizar la experiencia del usuario.',
+        'Gestión de Social Media: Manejo la cuenta de Instagram de INNOVATEProweb, creando y gestionando contenido visual y textual, además de evaluar el rendimiento en redes sociales.',
+        'Desarrollo Frontend: Contribuyo al desarrollo y mantenimiento de la funcionalidad de los sitios web, implementando diseños y resolviendo problemas técnicos según sea necesario.'
+    ]
+},
+{
+    title:'Freelancer', 
+    date:'Mayo 2023 - Actualidad', 
+    description:'He estado construyendo interfaces de usuario interactivas y receptivas para diversos proyectos desafiantes que me permiten aplicar diversas tecnologías y tendencias, con el objetivo de ofrecer la mejor experiencia de usuario posible. Además de mis tareas como desarrolladora frontend, he trabajado en:',
+    list:[
+        'Propuestas de diseño.',
+        'Creación de videos y contenido visual.',
+        'Desarrollo completo de páginas web, desde el diseño hasta la implementación.'
+    ]
+},
+{
+    title:'No Country - Frontend Developer (Simulación Laboral)', 
+    date:'Febrero 2024 - Abril 2024', 
+    description:'Participé en dos programas de simulación laboral en un entorno ágil y colaborativo. Durante este período, desarrollé proyectos web reales que involucraban:',
+    list:[
+        'Desarrollo de interfaces y Responsive Design.',
+        'Optimización de aplicaciones web (mejoras en velocidad y rendimiento).',
+        'Colaboración en equipo, trabajando junto a diseñadores, desarrolladores frontend y backend, QA testers y otros miembros del equipo para garantizar la cohesión y eficiencia del proyecto.'
+    ]
 }]
 ---
-<ol class="relative border-s border-gray-200 dark:border-gray-700">          
+<ol class="relative border-s border-secondary-light dark:border-x-secondary-dark">          
     {
         experience.map(item =>
 

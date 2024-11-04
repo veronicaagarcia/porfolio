@@ -4,15 +4,15 @@ import SectionName from "../icons/SectionName.astro"
 
 const { class : className, id , sectionName} = Astro.props
 ---
-<section id={id} class=`w-full min-h-screen md:w-[740px] lg:w-[800px] mx-auto ${className}`>
+<section id={id} class=`w-full min-h-screen md:w-[740px] lg:w-[800px] mx-auto ${className} `>
     <div class="flex justify-between items-start mb-20">
-        <h2 class="text-lg lg:text-xl text-secondary flex font-semibold underline">
+        <h2 class="text-lg lg:text-xl flex transition font-semibold underline">
             <SectionName class="size-6 md:size-8 text-primary mr-2"/>
             {sectionName}
         </h2>
 
-        <button id="scrollToTop" class="flex items-start justify-center rounded-full transition text-lg lg:text-xl text-secondary">
-            <ArrowUp class="size-8 md:size-10 text-primary opacity-45 hover:opacity-90 -mt-1.5"/>
+        <button id="scrollToTop" class="flex items-start justify-center rounded-full transition text-lg lg:text-xl">
+            <ArrowUp class="size-8 md:size-10 text-accent-light dark:text-accent-dark opacity-45 hover:opacity-90 -mt-1.5"/>
             Inicio
         </button>
     </div>

@@ -1,6 +1,6 @@
-<header class="flex flex-col justify-center items-center md:flex-row md:justify-around">
-    <figure id="about-img" class="overflow-hidden rounded-lg shadow-lg bg-transparent transform transition-transform duration-500">
-        <img id="main-img" src="/veronica2.JPG" class="rounded-b-2xl md:rounded-b-full bg-transparent -mt-1 size-14 md:size-24 lg:size-28 object-contain cursor-pointer transition-transform duration-500" alt="Veronica photo"/>
+<header class="flex flex-col justify-between items-center md:flex-row md:justify-around sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-10 transition-all duration-300">
+    <figure id="about-img" class="overflow-hidden bg-accent-light/80 dark:bg-accent-dark/80 rounded-lg shadow-xl shadow-secondary-light dark:shadow-secondary-dark  rounded-b-2xl md:rounded-b-full transform transition-transform duration-500 size-14 md:size-24 lg:size-28">
+        <img id="main-img" src="/veronica2.JPG" class="w-full h-full object-cover cursor-pointer transition-transform duration-500" alt="Veronica photo"/>
     </figure>
     <button id="menu-button" class="block md:hidden text-secondary focus:outline-none mt-4 md:mt-0">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -8,11 +8,11 @@
         </svg>
     </button>
     <nav id="nav-menu" class="hidden flex-col md:flex md:flex-row mt-2 md:mt-0 space-y-4 md:space-y-0 md:space-x-6 items-center">
-        <a class="no-underline text-secondary text-base md:text-xl lg:text-2xl hover:text-primary transition-transform duration-500 transform" href="#top">Inicio</a>
-        <a class="no-underline text-secondary text-base md:text-xl lg:text-2xl hover:text-primary transition-transform duration-500 transform" href="#experiencia">Experiencia</a>
-        <a class="no-underline text-secondary text-base md:text-xl lg:text-2xl hover:text-primary transition-transform duration-500 transform" href="#proyectos">Proyectos</a>
-        <a id="about-link" class="no-underline text-secondary text-base md:text-xl lg:text-2xl hover:text-primary transition-transform duration-500 transform" href="#conoceme">Conoceme</a>
-        <a class="no-underline text-secondary text-base md:text-xl lg:text-2xl hover:text-primary transition-transform duration-500 transform" href="#contacto">Contacto</a>
+        <a class="no-underline text-text-light dark:text-text-dark text-base md:text-xl lg:text-2xl hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300" href="#top">Inicio</a>
+        <a class="no-underline text-text-light dark:text-text-dark text-base md:text-xl lg:text-2xl hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300" href="#experiencia">Experiencia</a>
+        <a class="no-underline text-text-light dark:text-text-dark text-base md:text-xl lg:text-2xl hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300" href="#proyectos">Proyectos</a>
+        <a id="about-link" class="no-underline text-text-light dark:text-text-dark text-base md:text-xl lg:text-2xl hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300" href="#conoceme">Conoceme</a>
+        <a class="no-underline text-text-light dark:text-text-dark text-base md:text-xl lg:text-2xl hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300" href="#contacto">Contacto</a>
     </nav>
 </header>
 
@@ -24,7 +24,7 @@
     const navMenu = document.getElementById('nav-menu');
 
     aboutImg.addEventListener('mouseover', function() {
-        aboutLink.innerText = 'Sobre mí';
+        aboutLink.innerText = 'Conoceme';
         aboutLink.classList.remove('no-underline');
         aboutLink.classList.add('underline');
         mainImg.classList.add('rotate-180');
@@ -37,7 +37,7 @@
     });
 
     aboutImg.addEventListener('click', function() {
-        window.location.href = '/about';
+        window.location.href = '/#conoceme';
     });
 
     mainImg.addEventListener('transitionend', function() {
@@ -53,13 +53,26 @@
         navMenu.classList.toggle('flex');
     });
 </script>
-
+   
 <style>
     .rotate-180 {
         transform: rotateY(180deg);
     }
-</style>
-   
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
+    nav a {
+      animation: fadeIn 0.5s ease-out forwards;
+      opacity: 0;
+    }
+  
+    nav a:nth-child(1) { animation-delay: 0.1s; }
+    nav a:nth-child(2) { animation-delay: 0.2s; }
+    nav a:nth-child(3) { animation-delay: 0.3s; }
+    nav a:nth-child(4) { animation-delay: 0.4s; }
+    nav a:nth-child(5) { animation-delay: 0.5s; }
+</style>
 
 
