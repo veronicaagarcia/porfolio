@@ -1,109 +1,113 @@
 ---
 const projects = [
 {
-    title:'INNOVATEProweb - OCR',
-    description:'Este proyecto es una plantilla web diseñada para INNOVATEProweb para mostrar a posibles clientes las capacidades y el estilo visual en el desarrollo de sitios web. La plantilla es reutilizable y fácilmente personalizable para adaptarse a diferentes necesidades de clientes y proyectos.',
+    title:'Aplicación para extrar texto de imágenes',
+    description:'Desarrollé un sistema avanzado de Reconocimiento Óptico de Caracteres (OCR) enfocado en la extracción eficiente de texto desde imágenes y documentos escaneados. Este proyecto permite procesar imágenes, convertirlas en texto editable y optimizar flujos de trabajo que requieren digitalización masiva de datos. Incluye funcionalidades para almacenar y descargar los resultados de forma práctica, facilitando su integración en diversos entornos operativos.',
+    link:'https://practica-ocr.netlify.app/',
+    github:'https://github.com/veronicaagarcia/captura-texto-de-imagen',
+    image:'/projects/Ocr.png',
+    tags:['Opencv', 'Tesseract', 'JavaScript', 'React', 'Vite', 'Tailwind CSS']
+},
+{
+    title:'Manual de Marca Interactivo',
+    description:'Diseñé y desarrollé un manual de marca interactivo para INNOVATEProweb, con el objetivo de garantizar una identidad visual coherente y profesional en todos los canales. Este proyecto centraliza los elementos esenciales de la marca, como los colores corporativos, que pueden copiarse fácilmente con un solo clic, la tipografía oficial, accesible y aplicable directamente, y versiones del logotipo disponibles para descargar en diversos formatos y tamaños según las necesidades. Además, el manual incorpora accesos rápidos a recursos clave como el sitio web, redes sociales, herramientas de gestión como Asana, y documentos internos, optimizando los flujos de trabajo y facilitando la representación consistente de la marca.',
+    link:'https://identityinnovateproweb.netlify.app/',
+    github:'https://github.com/veronicaagarcia/guia-de-marca-innovateproweb',
+    image:'/projects/Mdm.png',
+    tags:['JavaScript', 'React', 'Astro', 'Tailwind CSS']
+},
+{
+    title:'Website Oficial de INNOVATEProweb',
+    description:'Rediseñé y desarrollé el sitio web oficial de INNOVATEProweb, enfocándome en transmitir los valores fundamentales de la empresa: rapidez, atención personalizada y calidad. El proyecto incluye un diseño profesional y moderno, complementado con animaciones sutiles que reflejan la innovación y refuerzan la experiencia interactiva del usuario. La plataforma está optimizada para ser visualmente atractiva, accesible e intuitiva, presentando los servicios de manera clara y efectiva, y posicionando a INNOVATEProweb como un referente en diseño y desarrollo web. Aunque el diseño visual y las animaciones fueron creados completamente por mí, el desarrollo del código fue realizado en colaboración con mi socio, quien contribuyó en la programación y optimización del sistema.',
+    colaboration:'Juan Pablo Riglos',
+    colaborationLink: 'https://www.linkedin.com/in/juanpabloriglos/',
+    link:'https://newtestinnovateproweb.netlify.app/',
+    github:'https://github.com/JuanPabloRiglos/InnovateProWeb',
+    image:'/projects/Ipw.png',
+    tags:['JavaScript', 'React', 'Astro', 'Tailwind CSS']
+},
+{
+    title:'Todo Chicos - Ecommerce WordPress',
+    description:'Desarrollé un sitio web en WordPress diseñado específicamente para negocios y servicios enfocados en niños, como parte de los proyectos de INNOVATEProweb. La plataforma combina un diseño amigable y limpio con una estructura fácil de personalizar, ideal tanto para tiendas en línea como para sitios informativos. Además, incluye una integración con la pasarela de pago Mercado Pago, lo que facilita transacciones seguras y rápidas, optimizando la experiencia tanto para los clientes como para los propietarios de la tienda. El sitio está diseñado para ofrecer una experiencia de usuario fluida, priorizando la funcionalidad, la accesibilidad y un diseño visual atractivo que conecta con su público objetivo.',
+    link:'https://demotodochicos.veronicagarciadev.com/',
+    github:'https://demotodochicos.veronicagarciadev.com/',
+    image:'/projects/Tc.png',
+    tags:['WordPress', 'MercadoPago']
+},
+{
+    title:'NutriFit - Website en WordPress',
+    description:'Desarrollé una plantilla en WordPress diseñada específicamente para negocios relacionados con la salud y el bienestar, como parte de los proyectos de INNOVATEProweb. El sitio combina un diseño funcional y visualmente atractivo con una estructura intuitiva, permitiendo a los usuarios acceder fácilmente a información sobre nutrición, programas de salud y servicios personalizados. NutriFit está pensado para satisfacer las necesidades de nutricionistas, entrenadores y empresas del sector salud, brindándoles una plataforma web sencilla y efectiva para conectarse con su público objetivo y fortalecer su presencia en línea.',
+    link:'https://demonutrifit.veronicagarciadev.com/',
+    github:'https://demonutrifit.veronicagarciadev.com/',
+    image:'/projects/Nf.png',
+    tags:['WordPress']
+},
+{
+    title:'Website Oficial de Macoretta Repuestos',
+    description:'Desarrollé el diseño y las animaciones de la plataforma web para Macoretta Repuestos, especializada en la venta de repuestos automotrices. El sitio permite a los usuarios explorar productos y servicios, y al hacer clic en cualquier artículo, se genera un mensaje personalizado que se envía directamente a WhatsApp, facilitando la comunicación con el cliente y completando la venta fuera de la plataforma. Aunque el diseño visual y las animaciones fueron creados completamente por mí, el desarrollo del código fue realizado en colaboración con mi socio, quien contribuyó en la programación y optimización del sistema. Esta colaboración permitió integrar la estética moderna con la funcionalidad que hace la experiencia de compra más directa y eficiente.',
+    colaboration:'Juan Pablo Riglos',
+    colaborationLink: 'https://www.linkedin.com/in/juanpabloriglos/',
+    link:'https://https://macoretta-test.netlify.app/',
+    github:'https://github.com/JuanPabloRiglos/mr',
+    image:'/projects/mr.png',
+    tags:['JavaScript', 'React', 'Astro', 'Tailwind CSS']
+},
+{
+    title:'Rincón Creativo - Proyecto Adaptable',
+    description:'Diseñé y desarrollé una base de código web enfocada en destacar la creatividad y la innovación, ideal para empresas de diseño, arte o publicidad. Este proyecto permite mostrar proyectos y servicios de manera visualmente impactante, con un diseño moderno y funcional. Aunque está diseñado para ser fácilmente adaptable por desarrolladores con conocimientos técnicos, su estructura flexible garantiza que pueda personalizarse según las necesidades específicas de cada negocio, ofreciendo una experiencia profesional y única para el público objetivo.',
+    link:'https://innovateprowebplantilla1.netlify.app/',
+    github:'https://github.com/veronicaagarcia/PLANTILLA-RinconCreativo',
+    image:'/projects/Rc.png',
+    tags:['JavaScript', 'React', 'Astro', 'Tailwind CSS']
+},
+{
+    title:'ZONA - Proyecto Adaptable',
+    description:'Diseñé y desarrollé una base de código web adaptable para empresas de cualquier sector que buscan un diseño moderno y atractivo. Este proyecto proporciona una estructura flexible que permite a desarrolladores personalizar fácilmente el diseño y las funcionalidades según las necesidades específicas de cada negocio. Con un enfoque en la estética contemporánea y la funcionalidad, ZONA está pensada para optimizar la presencia en línea y destacar la identidad de cualquier marca de forma profesional y única.',
+    link:'https://innovateprowebplantilla2.netlify.app/',
+    github:'https://github.com/veronicaagarcia/PLANTILLA-Zona',
+    image:'/projects/Zona.png',
+    tags:['JavaScript', 'React', 'Astro', 'Tailwind CSS']
+},
+{
+    title:'Website Oficial de la Dra. Carolina Danovara - Ortodoncia',
+    description:'Diseñé y desarrollé una plataforma web para la Dra. Carolina Danovara, especialista en ortodoncia, con el objetivo de ofrecer una experiencia en línea profesional y accesible. El sitio permite a los pacientes obtener información detallada sobre los tratamientos ofrecidos, consultar precios de forma clara y enviar solicitudes para agendar citas. Con un diseño moderno y funcional, la plataforma refleja la calidad y profesionalismo de los servicios de ortodoncia, facilitando la conexión entre la especialista y sus pacientes.',
     link:'https://ortodonciacarolinadanovara.netlify.app/',
     github:'https://github.com/veronicaagarcia/OdontologaDanovara',
     image:'/projects/ortodonciaCd.webp',
-    tags:['JavaScript', 'Astro', 'React', 'Tailwind CSS']
+    tags:['JavaScript', 'React', 'Astro', 'Tailwind CSS']
 },
 {
-    title:'INNOVATEProweb - manual de marca',
-    description:'Este proyecto es una plantilla web diseñada para INNOVATEProweb para mostrar a posibles clientes las capacidades y el estilo visual en el desarrollo de sitios web. La plantilla es reutilizable y fácilmente personalizable para adaptarse a diferentes necesidades de clientes y proyectos.',
-    link:'https://ortodonciacarolinadanovara.netlify.app/',
-    github:'https://github.com/veronicaagarcia/OdontologaDanovara',
-    image:'/projects/ortodonciaCd.webp',
-    tags:['JavaScript', 'Astro', 'React', 'Tailwind CSS']
-},
-{
-    title:'INNOVATEProweb - website oficial',
-    description:'Este proyecto es una plantilla web diseñada para INNOVATEProweb para mostrar a posibles clientes las capacidades y el estilo visual en el desarrollo de sitios web. La plantilla es reutilizable y fácilmente personalizable para adaptarse a diferentes necesidades de clientes y proyectos.',
-    link:'https://ortodonciacarolinadanovara.netlify.app/',
-    github:'https://github.com/veronicaagarcia/OdontologaDanovara',
-    image:'/projects/ortodonciaCd.webp',
-    tags:['JavaScript', 'Astro', 'React', 'Tailwind CSS']
-},
-{
-    title:'Todo Chicos - Plantilla wordpress',
-    description:'Este proyecto es una plantilla web diseñada para INNOVATEProweb para mostrar a posibles clientes las capacidades y el estilo visual en el desarrollo de sitios web. La plantilla es reutilizable y fácilmente personalizable para adaptarse a diferentes necesidades de clientes y proyectos.',
-    link:'https://ortodonciacarolinadanovara.netlify.app/',
-    github:'https://github.com/veronicaagarcia/OdontologaDanovara',
-    image:'/projects/ortodonciaCd.webp',
-    tags:['JavaScript', 'Astro', 'React', 'Tailwind CSS']
-},
-{
-    title:'NutriFit - Plantilla wordpress',
-    description:'Este proyecto es una plantilla web diseñada para INNOVATEProweb para mostrar a posibles clientes las capacidades y el estilo visual en el desarrollo de sitios web. La plantilla es reutilizable y fácilmente personalizable para adaptarse a diferentes necesidades de clientes y proyectos.',
-    link:'https://ortodonciacarolinadanovara.netlify.app/',
-    github:'https://github.com/veronicaagarcia/OdontologaDanovara',
-    image:'/projects/ortodonciaCd.webp',
-    tags:['JavaScript', 'Astro', 'React', 'Tailwind CSS']
-},
-{
-    title:'Macoretta repuestos - con juan pablo',
-    description:'Este proyecto es una plantilla web diseñada para INNOVATEProweb para mostrar a posibles clientes las capacidades y el estilo visual en el desarrollo de sitios web. La plantilla es reutilizable y fácilmente personalizable para adaptarse a diferentes necesidades de clientes y proyectos.',
-    link:'https://ortodonciacarolinadanovara.netlify.app/',
-    github:'https://github.com/veronicaagarcia/OdontologaDanovara',
-    image:'/projects/ortodonciaCd.webp',
-    tags:['JavaScript', 'Astro', 'React', 'Tailwind CSS']
-},
-{
-    title:'Rinc[on Creativo] - Plantilla web',
-    description:'Este proyecto es una plantilla web diseñada para INNOVATEProweb para mostrar a posibles clientes las capacidades y el estilo visual en el desarrollo de sitios web. La plantilla es reutilizable y fácilmente personalizable para adaptarse a diferentes necesidades de clientes y proyectos.',
-    link:'https://ortodonciacarolinadanovara.netlify.app/',
-    github:'https://github.com/veronicaagarcia/OdontologaDanovara',
-    image:'/projects/ortodonciaCd.webp',
-    tags:['JavaScript', 'Astro', 'React', 'Tailwind CSS']
-},
-{
-    title:'ZONA - Plantilla web',
-    description:'Este proyecto es una plantilla web diseñada para INNOVATEProweb para mostrar a posibles clientes las capacidades y el estilo visual en el desarrollo de sitios web. La plantilla es reutilizable y fácilmente personalizable para adaptarse a diferentes necesidades de clientes y proyectos.',
-    link:'https://ortodonciacarolinadanovara.netlify.app/',
-    github:'https://github.com/veronicaagarcia/OdontologaDanovara',
-    image:'/projects/ortodonciaCd.webp',
-    tags:['JavaScript', 'Astro', 'React', 'Tailwind CSS']
-},
-{
-    title:'Ortodoncista Carolina Danovara - Ortodoncia La Plata',
-    description:'El Sitio Web de Ortodoncia Carolina Danovara es una plataforma en línea de la Dra. Carolina Danovara, especialista en ortodoncia, que tiene el propósito de brindar información detallada y servicios de alta calidad en el campo de la ortodoncia. Este sitio web es una herramienta esencial para pacientes actuales y potenciales que buscan aprender sobre opciones de tratamiento de ortodoncia y acceder a servicios profesionales de ortodoncia.',
-    link:'https://ortodonciacarolinadanovara.netlify.app/',
-    github:'https://github.com/veronicaagarcia/OdontologaDanovara',
-    image:'/projects/ortodonciaCd.webp',
-    tags:['JavaScript', 'Astro', 'React', 'Tailwind CSS']
-},
-{
-    title:'Edificio Farfalle - Alquiler departamentos temporales',
-    description:'Se desarrolló el sitio web, utilizando el diseño proporcionado por el cliente y agregando un video de bienvenida junto con algunas animaciones. El sitio muestra de manera clara la ubicación del edificio, sus comodidades y facilita el contacto directo para estadías cortas.',
+    title:'Website Oficial de Edificio Farfalle',
+    description:'Desarrollé el sitio web del Edificio Farfalle, integrando la idea inicial proporcionada por el cliente y agregando elementos interactivos como un video de bienvenida y animaciones personalizadas. La plataforma destaca por su diseño moderno y funcional, mostrando de manera clara la ubicación del edificio, sus comodidades y ofreciendo un canal directo para consultas sobre estadías cortas. Este enfoque garantiza una experiencia en línea atractiva y orientada a captar la atención de posibles huéspedes.',
     link:'https://veronicaagarcia.github.io/edificioFarfalle/',
     github:'https://github.com/veronicaagarcia/edificioFarfalle',
     image:'/projects/edificioFarfalle.webp',
-    tags:['JavaScript', 'TypeScript', 'Vite', 'React', 'Tailwind CSS'
+    tags:['JavaScript', 'TypeScript', 'React', 'Vite', 'Tailwind CSS'
     ]
 },
 {
     title:'T-Acerco - No Country',
-    description:'Segunda simulación laboral tech, colaborando en un equipo multidisciplinario construyendo una solución con tecnología. T-Acerco, la plataforma definitiva para crear y unirse a eventos en tu localidad. En T-Acerco, los usuarios tienen la libertad de organizar una amplia variedad de eventos y compartirlos con la comunidad. Ya sea que busquen actividades por zona geográfica o por categoría de evento, la web conecta con personas que comparten intereses y mantienen informado sobre lo que sucede cerca del usuario.',
+    description:'Participé como Team Leader de Frontend en la segunda simulación laboral de No Country, colaborando con un equipo multidisciplinario para desarrollar T-Acerco, una plataforma diseñada para conectar personas a través de eventos locales. La web permite a los usuarios organizar y descubrir una amplia variedad de actividades, filtradas por zona geográfica o categoría, fomentando la interacción comunitaria y manteniendo informados a los usuarios sobre eventos cercanos. Como líder de frontend, guié la implementación de la interfaz y aseguré una experiencia de usuario intuitiva y atractiva, alineada con los objetivos del proyecto.',
     link:'https://s14-04-m-node-react-frontend.vercel.app/',
     github:'https://github.com/No-Country/s14-04-m-node-react',
     image:'/projects/tAcerco.png',
-    tags:['JavaScript', 'Vite', 'React', 'Tailwind CSS']
+    tags:['JavaScript', 'React', 'Vite', 'Tailwind CSS']
 },
 {
     title:'MedConnect - No Country',
-    description:'Primera simulación laboral tech, colaborando en un equipo multidisciplinario construyendo una solución con tecnología. MedConnect surge como una plataforma de telemedicina centrada en el usuario. Para los pacientes, simplifica la gestión de citas, el acceso a historiales médicos y la recepción de atención. Para los médicos, proporciona un flujo de trabajo simplificado que agiliza el acceso a la información del paciente y la gestión de citas.',
+    description:'Formé parte del equipo de frontend en la primera simulación laboral de No Country, colaborando con un equipo multidisciplinario para desarrollar MedConnect, una innovadora plataforma de telemedicina centrada en el usuario. La plataforma está diseñada para facilitar la gestión de citas, el acceso a historiales médicos y la atención remota para los pacientes, mientras que para los médicos ofrece herramientas que agilizan su flujo de trabajo y optimizan la gestión de la información del paciente. Mi contribución se enfocó en implementar la interfaz y garantizar una experiencia de usuario intuitiva y funcional.',
     link:'https://65eb5c2ca77394d626f52e05--dreamy-brioche-67f49a.netlify.app/',
     github:'https://github.com/No-Country/c16-66-ft-node',
     image:'/projects/MedConnect.png',
-    tags:['JavaScript', 'Vite', 'React', 'Tailwind CSS']
+    tags:['JavaScript', 'React', 'Vite', 'Tailwind CSS']
 },
 {
-    title:'The DoGame: Adivina la raza del perro',
-    description:'Sumérgete en este divertido y educativo juego donde tu objetivo es adivinar la raza del perro. Con una interfaz simple y amigable, The DoGame ofrece una experiencia entretenida para todos los amantes de los perros. Descubre datos curiosos y aleatorios sobre perros cada vez que juegas.  Construido en inglés y español.',
+    title:'The DoGame - Juego Educativo',
+    description:'Desarrollé The DoGame, un juego educativo diseñado para combinar diversión y aprendizaje, donde los jugadores deben adivinar la raza de diferentes perros. La plataforma consume APIs para obtener datos sobre las razas, enriqueciendo la experiencia del usuario con información precisa y actualizada. Además, incluye una interfaz amigable que muestra datos curiosos en cada partida, y está disponible en inglés y español, haciendo que sea accesible a una audiencia global.',
     link:'https://veronicaagarcia.github.io/TheDoGame/',
     github:'https://github.com/veronicaagarcia/TheDoGame',
     image:'/projects/dogame.png',
-    tags:['JavaScript', 'TypeScript', 'Vite', 'React', 'CSS']
+    tags:['APIs REST', 'JavaScript', 'TypeScript', 'Vite', 'React', 'CSS']
 }
 ]
 ---
@@ -115,11 +119,16 @@ const projects = [
                 <img class="w-full h-auto object-cover transition-all duration-300 ease-in-out group-hover:scale-105" src={item.image} alt={`Imagen del proyecto ${item.title}`} />
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent to-background-light dark:to-background-dark opacity-0 group-hover:opacity-70 transition-all duration-300"></div>
             </div>
-            <div class="p-5">
-                <h3 class="text-center mb-4 text-lg lg:text-xl font-semibold text-primary-light dark:text-primary-dark">{item.title}</h3>
-                <div class="max-h-0 overflow-hidden transition-all duration-300 group-hover:max-h-96">
-                    <p class="text-sm text-text-light dark:text-text-dark mb-4">{item.description}</p>
-                    <ul class="flex justify-evenly flex-wrap md:justify-around mb-6">
+            <div class="p-4">
+                <h3 class="text-center text-sm md:text-base xl:text-xl font-semibold text-primary-light dark:text-primary-dark">{item.title}</h3>
+                <div class="max-h-0 overflow-hidden transition-all duration-300 group-hover:max-h-fit">
+                    <p class="text-sm text-text-light dark:text-text-dark my-4">{item.description}</p>
+                    
+                    {item.colaboration &&
+                        <p>Colaboración en código con: <a href={item.colaborationLink} target="_blank" rel="noopener noreferrer" class="text-primary-light dark:text-primary-dark text-sm font-medium hover:text-accent-light dark:hover:text-accent-dark transition-all duration-300">{item.colaboration}</a>
+                        </p>
+                    }
+                    <ul class="flex justify-evenly gap-2 flex-wrap md:justify-around mb-6">
                         {item.tags.map(tag => (
                         <li class="block mb-2 text-sm lg:text-base font-medium leading-none text-text-light dark:text-text-dark mr-1 md:mr-0">{tag}</li>
                     ))} 
