@@ -4,64 +4,127 @@ import Contact from '../components/Contact.astro';
 import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
 import Section from '../components/Section.astro';
-import Github from '../icons/Github.astro';
-import Gmail from '../icons/Gmail.astro';
-import Linkedin from '../icons/Linkedin.astro';
+import SocialLinks from '../components/SocialLinks.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Portfolio de Verónica García - Frontend Developer y UI/UX Designer" description="Frontend Developer con experiencia en la creación de experiencias web atractivas y funcionales. Mi objetivo es combinar diseño creativo con desarrollo técnico para crear sitios web hermosos y fáciles de usar.">
-	<main id="top" class="p-6">
-		<section class="w-full md:min-h-screen md:w-[740px] lg:w-[800px] mx-auto py-24">
-			<h1 class="text-accent-light dark:text-accent-dark transition-colors duration-300 text-lg md:text-xl lg:text-3xl text-center  font-semibold ">Frontend & UI/UX</h1>
-			<h2 class="text-primary-light dark:text-primary-dark transition-colors duration-300 text-base md:text-lg lg:text-xl mt-8 md:mt-12 text-justify md:text-center text-pretty">¡Hola! Soy Vero García, <span class="text-text-light dark:text-text-dark">desarrolladora frontend y diseñadora UI/UX</span> de Argentina. Me especializo en crear experiencias web atractivas y funcionales, combinando creatividad y técnica. Me apasiona el aprendizaje constante y siempre busco soluciones que generen un impacto positivo en la experiencia del usuario. ¡Bienvenido a mi portfolio, donde encontrarás una selección de mi trabajo y experiencia!</h2>
-			<ul class="flex justify-evenly mt-8 md:mt-20">
-				<li class="mr-2">
-					<a class='flex flex-col items-center justify-center no-underline mx-auto hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300 cursor-pointer text-base md:text-lg' href="https://www.linkedin.com/in/veronicaagarcia/" target="_blank" rel="noopener noreferrer">
-						<Linkedin class="size-7 md:size-14 hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300 scale-100 hover:scale-110"/>
-						Linkedin
-					</a>
-				</li>
-				<li class="mr-2">
-					<a class='flex flex-col items-center justify-center no-underline mx-auto hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300 cursor-pointer text-base md:text-lg' href="https://github.com/veronicaagarcia" target="_blank" rel="noopener noreferrer">
-						<Github class="size-7 md:size-14 hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300 scale-100 hover:scale-110"/>
-						Github
-					</a>
-				</li>
-				<li class="mr-2">
-					<a class='flex flex-col items-center justify-center no-underline mx-auto hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300 cursor-pointer text-base md:text-lg' href="mailto:veroagarcia90@gmail.com" target="_blank" rel="noopener noreferrer" title="veroagarcia90@gmail.com">
-						<Gmail class="size-7 md:size-14 hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300 scale-100 hover:scale-110"/>
-						Gmail
-					</a>
-				</li>
-			</ul>
-		</section>
+<Layout
+  title="Verónica García - Frontend Lead & Co-Founder | React, UI/UX & WordPress"
+  description="Co-Founder de Hermes, especializada en desarrollo frontend y diseño UX/UI. +3 años creando experiencias web excepcionales con React, Astro y WordPress. Portfolio de proyectos innovadores desde Argentina."
+  image="/og-image.jpg"
+  url="https://veronicagarciaporfolio.netlify.app/"
+>
+  <main id="main-content" class="p-6">
+    <header class="w-full md:min-h-screen md:w-[740px] lg:w-[800px] mx-auto py-24 relative">
+      
+      <h1 class="sr-only">Verónica García - Frontend Developer y UI/UX Designer</h1>
+      <p
+        class="text-accent-light dark:text-accent-dark transition-all duration-500 text-lg md:text-xl lg:text-3xl text-center font-bold tracking-wide mb-4 animate-fade-in-up"
+        aria-label="Especialidades"
+        style="animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards;"
+      >
+        Frontend & UI/UX Design
+      </p>
+      <div
+        class="text-text-light dark:text-text-dark transition-colors duration-300 text-base md:text-lg lg:text-xl mt-8 md:mt-12 text-justify md:text-center text-pretty leading-relaxed md:leading-loose animate-fade-in-up"
+        role="banner"
+        style="animation-delay: 0.4s; opacity: 0; animation-fill-mode: forwards;"
+      >
+        Soy Verónica García, <span class="text-primary-light dark:text-primary-dark font-medium"
+          >Co-Founder & Frontend Developer</span
+        > con <strong class="text-primary-light dark:text-primary-dark">+3 años de experiencia</strong> creando experiencias digitales excepcionales y liderando el diseño de productos innovadores.
+        Especializada en <strong class="text-primary-light dark:text-primary-dark">React, Astro, UI/UX Design y arquitecturas frontend</strong>, transformo ideas complejas en
+        interfaces intuitivas y visualmente impactantes. Combino creatividad estratégica con desarrollo técnico para
+        crear productos que no solo se ven increíbles, sino que también <strong class="text-primary-light dark:text-primary-dark"
+          >resuelven problemas reales de usuarios</strong
+        >.
+        <br /><br />
+        <em class="text-accent-light dark:text-accent-dark"
+          >Bienvenido a mi portfolio, donde cada proyecto refleja la perfecta armonía entre diseño estratégico y desarrollo de calidad.</em
+        >
+      </div>
+      <div class="animate-fade-in-up" style="animation-delay: 0.6s; opacity: 0; animation-fill-mode: forwards;">
+        <SocialLinks variant="hero" />
+      </div>
+    </header>
 
-		<Section id="experiencia" sectionName="Experiencia Laboral">
-			<Experience />
-		</Section>
+    <Section id="experiencia" sectionName="Trayectoria Profesional">
+      <Experience />
+    </Section>
 
-		<Section id="proyectos" sectionName="Proyectos">
-			<Projects />
-		</Section>
+    <Section id="proyectos" sectionName="Portfolio & Casos de Estudio">
+      <Projects />
+    </Section>
 
-		<Section id="conoceme" sectionName="Sobre mí">
-			<About />
-		</Section>
+    <div class="mb-16 md:mb-24"></div>
 
-		<Section id="contacto" sectionName="Contacto">
-			<Contact />
-		</Section>
-	</main>
-	<script>
-		document.querySelectorAll('#scrollToTop').forEach(function(button) {
-            button.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
+    <Section id="conoceme" sectionName="Acerca de Mí">
+      <About />
+    </Section>
+
+    <Section id="contacto" sectionName="¡Conectemos!">
+      <Contact />
+    </Section>
+  </main>
+  <script>
+    document.querySelectorAll('#scrollToTop').forEach(function (button) {
+      button.addEventListener('click', function () {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
         });
-	</script>
-</Layout>
+      });
+    });
+  </script>
 
+  <style>
+    /* Fade in up animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    /* Enhanced hover effects for better interactivity */
+    .hover-lift {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Smooth scrolling behavior */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Enhanced focus states for accessibility */
+    *:focus-visible {
+      outline: 2px solid theme('colors.accent.light');
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* Custom selection colors */
+    ::selection {
+      background-color: theme('colors.primary.light');
+      color: white;
+    }
+
+    ::-moz-selection {
+      background-color: theme('colors.primary.light');
+      color: white;
+    }
+  </style>
+</Layout>

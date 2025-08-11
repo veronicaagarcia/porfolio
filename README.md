@@ -1,4 +1,5 @@
 # Portfolio de Verónica García
+
 **¡Hola! Soy Verónica García**, una desarrolladora frontend con un enfoque adicional en diseño UI/UX, comprometida en crear interfaces de usuario intuitivas y experiencias de usuario sobresalientes. Actualmente, lidero el equipo de UI/UX en INNOVATEProweb, donde combino habilidades de diseño y desarrollo para optimizar proyectos web.
 
 🛠️**Habilidades Técnicas**

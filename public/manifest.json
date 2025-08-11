@@ -1,0 +1,25 @@
+{
+  "name": "Verónica García - Portfolio",
+  "short_name": "Vero Portfolio",
+  "description": "Frontend Developer y UI/UX Designer especializada en React, Astro y Tailwind CSS",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/og-image.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "lang": "es",
+  "categories": ["business", "portfolio", "developer"]
+}

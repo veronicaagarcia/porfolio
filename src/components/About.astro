@@ -1,12 +1,56 @@
-<div class="flex flex-col items-center  pb-10">
-    <img class="h-auto max-w-48 transition-all duration-300 rounded-lg cursor-pointer filter grayscale hover:grayscale-0 mb-6 md:mb-0" src="/Veronica.png" alt="Vero image">
+---
+import { Image } from 'astro:assets';
+import veronicaAboutImg from '/public/Veronica.png';
+---
 
-    <div class="mb-1 md:pl-16 font-extralight text-justify text-base md:text-lg text-text-light dark:text-text-dark transition-colors duration-300">
-        <p>Soy Verónica Andrea García, una <strong class="text-primary-light dark:text-primary-dark">Frontend Developer con más de dos años</strong> en la creación de experiencias web atractivas y funcionales. Mi formación académica incluye una Licenciatura en Relaciones Públicas y un Profesorado Universitario, pero mi verdadera vocación la encontré <strong class="text-primary-light dark:text-primary-dark">en la programación y el diseño</strong>.</p>
-            
-        <p>Tengo una inclinación natural hacia el diseño UX/UI, y actualmente estoy profundizando mis conocimientos en este campo para poder ofrecer soluciones más completas y estéticamente agradables. Mi objetivo es combinar mis habilidades técnicas con mi sentido del diseño para crear sitios web que no solo funcionen bien, sino que también sean visualmente atractivos y fáciles de usar.</p>
+<div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 pb-10">
+  <div class="flex-shrink-0">
+    <Image
+      class="h-auto w-48 md:w-56 lg:w-64 transition-all duration-500 rounded-2xl cursor-pointer filter grayscale hover:grayscale-0 hover:scale-105 hover:shadow-2xl hover:shadow-accent-light/20 dark:hover:shadow-accent-dark/20 hover:rotate-1"
+      src={veronicaAboutImg}
+      alt="Fotografía profesional de Verónica García sonriendo"
+      width={256}
+      height={256}
+      loading="lazy"
+      format="webp"
+    />
+  </div>
 
-        <p>Estoy <strong class="text-primary-light dark:text-primary-dark">siempre abierta a nuevos desafíos y oportunidades</strong> que me permitan aportar mi creatividad y conocimientos.</p>
-    </div>
+  <div
+    class="flex-1 font-light text-justify md:text-left text-base md:text-lg lg:text-xl leading-relaxed md:leading-loose text-text-light dark:text-text-dark transition-colors duration-300 space-y-4 md:space-y-6"
+  >
+    <p>
+      Soy Verónica Andrea García, <strong class="text-primary-light dark:text-primary-dark"
+        >Co-Founder & Frontend Lead con +3 años de experiencia</strong
+      > creando experiencias digitales que marcan la diferencia. Mi journey comenzó con una formación en Relaciones
+      Públicas y Profesorado Universitario, pero encontré mi verdadera vocación
+      <strong class="text-primary-light dark:text-primary-dark"
+        >en la intersección entre diseño visual y desarrollo frontend</strong
+      >.
+    </p>
+
+    <p>
+      Como <strong class="text-primary-light dark:text-primary-dark"
+        >Co-Founder de Hermes</strong
+      >, lidero todo el desarrollo frontend y diseño UX/UI de nuestra agencia digital. Mi enfoque se centra en
+      crear interfaces web que no solo sean visualmente impactantes, sino que también ofrezcan experiencias
+      de usuario intuitivas y memorables, combinando estética moderna con funcionalidad excepcional.
+    </p>
+
+    <p>
+      <strong class="text-primary-light dark:text-primary-dark">Mi diferencial como Frontend Lead:</strong> combino
+      creatividad estratégica con expertise técnico profundo en React, Astro, WordPress y tecnologías frontend
+      modernas. Esta dualidad me permite no solo diseñar experiencias excepcionales, sino también implementarlas
+      con código limpio, escalable y optimizado.
+    </p>
+
+    <p>
+      Estoy <strong class="text-primary-light dark:text-primary-dark"
+        >constantemente explorando nuevas tendencias en UI/UX</strong
+      >
+      y tecnologías frontend emergentes. Busco proyectos desafiantes donde pueda aportar mi experiencia
+      en diseño de interfaces, desarrollo frontend y liderazgo creativo para crear soluciones digitales
+      que realmente conecten con los usuarios.
+    </p>
+  </div>
 </div>
-

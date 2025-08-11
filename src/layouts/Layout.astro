@@ -5,128 +5,254 @@ import ThemeToggle from '../components/ThemeToggle.astro';
 import '@fontsource-variable/onest';
 
 interface Props {
-	title: string;
-	description: string
+  title: string;
+  description: string;
+  image?: string;
+  url?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image = '/og-image.jpg', url = Astro.url.href } = Astro.props;
+
+// Datos estructurados JSON-LD para SEO
+const jsonLD = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Verónica García',
+  jobTitle: 'Frontend Developer y UI/UX Designer',
+  description:
+    'Frontend Developer especializada en crear experiencias web atractivas y funcionales con React, Astro y Tailwind CSS.',
+  url: 'https://veronicagarciaporfolio.netlify.app/',
+  sameAs: ['https://www.linkedin.com/in/veronicaagarcia/', 'https://github.com/veronicaagarcia'],
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'AR',
+    addressLocality: 'Argentina',
+  },
+  knowsAbout: [
+    'Frontend Development',
+    'UI/UX Design',
+    'React',
+    'Astro',
+    'JavaScript',
+    'TypeScript',
+    'Tailwind CSS',
+    'Web Development',
+  ],
+  email: 'veroagarcia90@gmail.com',
+};
 ---
 
 <!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="description" content={description} />
-	<meta name="keywords" content="frontend, desarrollo web, UI/UX, diseño, React, Astro" />
-	<link rel="canonical" href="https://veronicagarciaporfolio.netlify.app/" />
-	<meta name="viewport" content="width=device-width" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-	<meta name="generator" content={Astro.generator} />
-	<title>{title}</title>
-</head>
-<!-- <body class="relative flex flex-col justify-center bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300"> -->
-<body class="relative flex flex-col justify-center bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-150">
-	<!-- Fondo con círculos animados -->
-	<div class="absolute inset-0 -z-10 overflow-hidden">
-		<!-- Círculos con animación y colores dinámicos -->
-		<div class="circle absolute rounded-full bg-accent-light dark:bg-accent-dark opacity-10"></div>
-		<div class="circle absolute rounded-full bg-primary-light dark:bg-primary-dark opacity-30"></div>
-		<div class="circle absolute rounded-full bg-text-light dark:bg-text-dark opacity-20"></div>
-		<div class="circle absolute rounded-full bg-accent-light dark:bg-accent-dark opacity-25"></div>
-		<div class="circle absolute rounded-full bg-primary-light dark:bg-primary-dark opacity-15"></div>
-		<div class="circle absolute rounded-full bg-text-light dark:bg-text-dark opacity-20"></div>
-		<div class="circle absolute rounded-full bg-accent-light dark:bg-accent-dark opacity-10"></div>
-		<div class="circle absolute rounded-full bg-accent-light dark:bg-accent-dark opacity-10"></div>
-	</div>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="frontend developer, desarrollo web, UI/UX designer, React, Astro, JavaScript, TypeScript, Tailwind CSS, portfolio, Verónica García, Argentina, diseño web, programación"
+    />
+    <meta name="author" content="Verónica García" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={url} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
 
-	<div class="max-w-5xl mx-auto px-4 sm:px-6">
-		<Header />
-		<slot class="bg-background-light dark:bg-background-dark" />
-		<Footer />
-		<ThemeToggle />
-	</div>
-</body>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="Verónica García Portfolio" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLD)} />
+
+    <!-- Performance optimizations -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      /></noscript
+    >
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- PWA manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#3b82f6" />
+    <meta name="msapplication-TileColor" content="#3b82f6" />
+
+    <title>{title}</title>
+  </head>
+  <!-- <body class="relative flex flex-col justify-center bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300"> -->
+  <body
+    class="relative flex flex-col justify-center bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-150"
+  >
+    <!-- Skip link para navegación por teclado -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-light text-white px-4 py-2 rounded z-50"
+    >
+      Saltar al contenido principal
+    </a>
+    <!-- Fondo con círculos animados -->
+    <div class="absolute inset-0 -z-10 overflow-hidden">
+      <!-- Círculos con animación y colores dinámicos -->
+      <div class="circle absolute rounded-full bg-accent-light dark:bg-accent-dark opacity-10">
+      </div>
+      <div class="circle absolute rounded-full bg-primary-light dark:bg-primary-dark opacity-30">
+      </div>
+      <div class="circle absolute rounded-full bg-text-light dark:bg-text-dark opacity-20"></div>
+      <div class="circle absolute rounded-full bg-accent-light dark:bg-accent-dark opacity-25">
+      </div>
+      <div class="circle absolute rounded-full bg-primary-light dark:bg-primary-dark opacity-15">
+      </div>
+      <div class="circle absolute rounded-full bg-text-light dark:bg-text-dark opacity-20"></div>
+      <div class="circle absolute rounded-full bg-accent-light dark:bg-accent-dark opacity-10">
+      </div>
+      <div class="circle absolute rounded-full bg-accent-light dark:bg-accent-dark opacity-10">
+      </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <Header />
+      <slot class="bg-background-light dark:bg-background-dark" />
+      <Footer />
+      <ThemeToggle />
+    </div>
+  </body>
 </html>
 
 <style is:global>
-	/* Tipografía */
-	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-	html {
-		font-family: "Onest Variable", system-ui, sans-serif;
-	}
-	h1, h2, h3 {
-		font-family: "Poppins", sans-serif;
-	}
+  /* Tipografía */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+  html {
+    font-family: 'Onest Variable', system-ui, sans-serif;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: 'Poppins', sans-serif;
+  }
 
-	/* Animación de los círculos */
-	@keyframes float {
-		0% { transform: translate(0, 0); }
-		50% { transform: translate(20px, -30px); }
-		100% { transform: translate(0, 0); }
-	}
+  /* Animación de los círculos */
+  @keyframes float {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(20px, -30px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
 
-	.circle {
-		width: 200px;
-		height: 200px;
-		animation: float 8s ease-in-out infinite;
-	}
+  .circle {
+    width: 200px;
+    height: 200px;
+    animation: float 8s ease-in-out infinite;
+  }
 
-	/* Tamaños y posiciones específicas para los círculos */
-	.circle:nth-child(1) {
-		width: 50px;
-		height: 50px;
-		top: 5%;
-		left: 80%;
-		animation-duration: 15s;
-	}
-	.circle:nth-child(2) {
-		width: 250px;
-		height: 250px;
-		top: 10%;
-		left: 10%;
-		animation-duration: 10s;
-	}
-	.circle:nth-child(3) {
-		width: 160px;
-	height: 160px;
-	top: 85%;
-	left: 30%;
-	animation-duration: 14s;
-	}
-	.circle:nth-child(4) {
-		width: 200px;
-		height: 200px;
-		top: 30%;
-		left: 85%;
-		animation-duration: 9s;
-	}
-	.circle:nth-child(5) {
-	width: 180px;
-	height: 180px;
-	top: 70%;
-	left: 10%;
-	animation-duration: 11s;
-}
-.circle:nth-child(6) {
-	width: 220px;
-	height: 220px;
-	top: 40%;
-	left: 30%;
-	animation-duration: 13s;
-}
-.circle:nth-child(7) {
-	width: 150px;
-		height: 150px;
-		top: 60%;
-		left: 50%;
-		animation-duration: 12s;
-	
-}
-.circle:nth-child(8) {
-	width: 50px;
-	height: 50px;
-	top: 95%;
-	left: 80%;
-	animation-duration: 15s;
-}
+  /* Tamaños y posiciones específicas para los círculos */
+  .circle:nth-child(1) {
+    width: 50px;
+    height: 50px;
+    top: 5%;
+    left: 80%;
+    animation-duration: 15s;
+  }
+  .circle:nth-child(2) {
+    width: 250px;
+    height: 250px;
+    top: 10%;
+    left: 10%;
+    animation-duration: 10s;
+  }
+  .circle:nth-child(3) {
+    width: 160px;
+    height: 160px;
+    top: 85%;
+    left: 30%;
+    animation-duration: 14s;
+  }
+  .circle:nth-child(4) {
+    width: 200px;
+    height: 200px;
+    top: 30%;
+    left: 85%;
+    animation-duration: 9s;
+  }
+  .circle:nth-child(5) {
+    width: 180px;
+    height: 180px;
+    top: 70%;
+    left: 10%;
+    animation-duration: 11s;
+  }
+  .circle:nth-child(6) {
+    width: 220px;
+    height: 220px;
+    top: 40%;
+    left: 30%;
+    animation-duration: 13s;
+  }
+  .circle:nth-child(7) {
+    width: 150px;
+    height: 150px;
+    top: 60%;
+    left: 50%;
+    animation-duration: 12s;
+  }
+  .circle:nth-child(8) {
+    width: 50px;
+    height: 50px;
+    top: 95%;
+    left: 80%;
+    animation-duration: 15s;
+  }
+
+  /* Clases de accesibilidad para screen readers */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
 </style>

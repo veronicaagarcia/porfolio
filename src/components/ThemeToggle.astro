@@ -44,9 +44,25 @@
   
   document.getElementById("themeToggle").addEventListener("click", handleToggleClick);
 </script> -->
-
-<button id="themeToggle" class="fixed top-5 right-5 bg-secondary-light dark:bg-secondary-dark p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50">  
-  <svg xmlns="http://www.w3.org/2000/svg" class="hidden dark:block text-text-dark" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<button
+  id="themeToggle"
+  class="fixed top-5 right-5 bg-secondary-light dark:bg-secondary-dark p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50"
+  aria-label="Alternar tema oscuro/claro"
+  title="Cambiar tema"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="hidden dark:block text-text-dark"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
     <circle cx="12" cy="12" r="5"></circle>
     <line x1="12" y1="1" x2="12" y2="3"></line>
     <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -57,8 +73,17 @@
     <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
   </svg>
-  <svg width="24" height="24" viewBox="0 0 24 24" class="block dark:hidden text-text-light">
-    <path fill="currentColor" d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"/>
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    class="block dark:hidden text-text-light"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      d="M12 11.807A9.002 9.002 0 0 1 10.049 2a9.942 9.942 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142 3.906 3.906 10.237 3.905 14.143 0a9.946 9.946 0 0 0 2.735-5.119A9.003 9.003 0 0 1 12 11.807z"
+    ></path>
   </svg>
 </button>
 
@@ -98,8 +123,8 @@
 
   const handleToggleClick = debounce(() => {
     const element = document.documentElement;
-    const isDark = element.classList.contains("dark");
-    const newTheme = isDark ? "light" : "dark";
+    const isDark = element.classList.contains('dark');
+    const newTheme = isDark ? 'light' : 'dark';
     setTheme(newTheme);
 
     // Forzar un repintado
@@ -110,5 +135,5 @@
     });
   }, 50);
 
-  document.getElementById("themeToggle").addEventListener("click", handleToggleClick);
+  document.getElementById('themeToggle').addEventListener('click', handleToggleClick);
 </script>

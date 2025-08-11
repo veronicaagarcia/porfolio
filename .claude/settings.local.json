@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev:*)",
+      "Bash(npm run build:*)",
+      "WebFetch(domain:identityinnovateproweb.netlify.app)",
+      "WebFetch(domain:praiabymg.veronicagarciadev.com)",
+      "WebFetch(domain:www.hermes.website)",
+      "WebFetch(domain:newtestinnovateproweb.netlify.app)",
+      "WebFetch(domain:www.edificiofarfalle.com)",
+      "WebFetch(domain:ortodonciacarolinadanovara.veronicagarciadev.com)"
+    ],
+    "deny": []
+  }
+}

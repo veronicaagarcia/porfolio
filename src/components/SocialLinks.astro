@@ -1,0 +1,124 @@
+---
+import Github from '../icons/Github.astro';
+import Gmail from '../icons/Gmail.astro';
+import Linkedin from '../icons/Linkedin.astro';
+
+interface Props {
+  variant?: 'hero' | 'contact';
+  showCV?: boolean;
+}
+
+const { variant = 'hero', showCV = false } = Astro.props;
+
+const socialLinks = [
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/veronicaagarcia/',
+    icon: Linkedin,
+    ariaLabel: 'Perfil de LinkedIn de Verónica García',
+    text: {
+      hero: 'Linkedin',
+      contact: 'LinkedIn',
+    },
+  },
+  {
+    name: 'GitHub',
+    href: 'https://github.com/veronicaagarcia',
+    icon: Github,
+    ariaLabel: 'Repositorio de GitHub de Verónica García',
+    text: {
+      hero: 'Github',
+      contact: 'GitHub',
+    },
+  },
+  {
+    name: 'Gmail',
+    href: 'mailto:veroagarcia90@gmail.com',
+    icon: Gmail,
+    ariaLabel: 'Enviar email a veroagarcia90@gmail.com',
+    title: 'veroagarcia90@gmail.com',
+    text: {
+      hero: 'Gmail',
+      contact: 'veroagarcia90@gmail.com',
+    },
+  },
+];
+
+const getClasses = (variant: string) => {
+  if (variant === 'hero') {
+    return {
+      container: 'flex justify-evenly mt-8 md:mt-20',
+      item: 'mr-2',
+      link: 'flex flex-col items-center justify-center no-underline mx-auto hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300 cursor-pointer text-base md:text-lg',
+      icon: 'size-7 md:size-14 hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300 scale-100 hover:scale-110',
+    };
+  } else {
+    return {
+      container: 'flex flex-col justify-center items-center space-y-4',
+      item: '',
+      link: 'flex items-center text-secondary hover:text-primary-light dark:hover:text-primary-dark cursor-pointer text-lg',
+      icon: 'w-6 h-6 mr-2',
+    };
+  }
+};
+
+const classes = getClasses(variant);
+---
+
+{
+  variant === 'hero' ? (
+    <ul class={classes.container}>
+      {socialLinks.map((link) => {
+        const Icon = link.icon;
+        return (
+          <li class={classes.item}>
+            <a
+              class={classes.link}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={link.ariaLabel}
+              title={link.title}
+            >
+              <Icon class={classes.icon} />
+              {link.text[variant]}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  ) : (
+    <div class={classes.container}>
+      {socialLinks.map((link) => {
+        const Icon = link.icon;
+        return (
+          <a
+            class={classes.link}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.ariaLabel}
+            title={link.title}
+          >
+            <Icon class={classes.icon} />
+            {link.text[variant]}
+          </a>
+        );
+      })}
+      {showCV && (
+        <a
+          href="https://veronicagarciadev.com/CV-VeronicaGarcia.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 bg-accent-light dark:bg-accent-dark text-white rounded-lg hover:bg-primary-light dark:hover:bg-primary-dark transition-all duration-300 shadow-lg hover:shadow-xl"
+          aria-label="Ver CV de Verónica García"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+          Ver CV
+        </a>
+      )}
+    </div>
+  )
+}

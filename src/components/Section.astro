@@ -1,20 +1,61 @@
 ---
-import ArrowUp from "../icons/ArrowUp.astro"
-import SectionName from "../icons/SectionName.astro"
+import ArrowUp from '../icons/ArrowUp.astro';
+import SectionName from '../icons/SectionName.astro';
 
-const { class : className, id , sectionName} = Astro.props
+const { class: className, id, sectionName } = Astro.props;
 ---
-<section id={id} class=`w-full min-h-screen md:w-[740px] lg:w-[800px] mx-auto ${className} `>
-    <div class="flex justify-between items-start mb-20">
-        <h2 class="text-lg lg:text-xl flex transition font-semibold underline">
-            <SectionName class="size-6 md:size-8 text-primary mr-2"/>
-            {sectionName}
-        </h2>
 
-        <button id="scrollToTop" class="flex items-start justify-center rounded-full transition text-lg lg:text-xl">
-            <ArrowUp class="size-8 md:size-10 text-accent-light dark:text-accent-dark opacity-45 hover:opacity-90 -mt-1.5"/>
-            Inicio
-        </button>
-    </div>
-    <slot/>
+<section id={id} class=`w-full min-h-screen md:w-[740px] lg:w-[800px] mx-auto ${className} relative`>
+  
+  <div class="flex justify-between items-start mb-20 relative z-10">
+    <h2 class="text-lg lg:text-xl flex transition-all duration-500 font-bold underline decoration-accent-light dark:decoration-accent-dark underline-offset-4 hover:underline-offset-8 hover:decoration-2">
+      <SectionName class="size-6 md:size-8 text-primary mr-3 animate-pulse" />
+      {sectionName}
+    </h2>
+
+    <button
+      id="scrollToTop"
+      class="group flex items-start justify-center rounded-full transition-all duration-300 text-lg lg:text-xl hover:scale-105 hover:bg-accent-light/10 dark:hover:bg-accent-dark/10 p-2 -m-2"
+      aria-label="Volver al inicio de la página"
+      title="Volver arriba"
+    >
+      <ArrowUp
+        class="size-8 md:size-10 text-accent-light dark:text-accent-dark opacity-60 group-hover:opacity-100 group-hover:transform group-hover:-translate-y-1 transition-all duration-300 -mt-1.5"
+      />
+      <span class="group-hover:text-accent-light dark:group-hover:text-accent-dark transition-colors duration-300">Inicio</span>
+    </button>
+  </div>
+  <div class="animate-fade-in-up" style="animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards;">
+    <slot />
+  </div>
 </section>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease-out 0.5s forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+  }
+</style>

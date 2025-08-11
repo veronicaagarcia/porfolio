@@ -1,78 +1,226 @@
-<header class="flex flex-col justify-between items-center md:flex-row md:justify-around sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-10 transition-all duration-300">
-    <figure id="about-img" class="overflow-hidden bg-accent-light/80 dark:bg-accent-dark/80 rounded-lg shadow-xl shadow-secondary-light dark:shadow-secondary-dark  rounded-b-2xl md:rounded-b-full transform transition-transform duration-500 size-14 md:size-24 lg:size-28">
-        <img id="main-img" src="/veronica2.JPG" class="w-full h-full object-cover cursor-pointer transition-transform duration-500" alt="Veronica photo"/>
-    </figure>
-    <button id="menu-button" class="block md:hidden text-secondary focus:outline-none mt-4 md:mt-0">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-    </button>
-    <nav id="nav-menu" class="hidden flex-col md:flex md:flex-row mt-2 md:mt-0 space-y-4 md:space-y-0 md:space-x-6 items-center">
-        <a class="no-underline text-text-light dark:text-text-dark text-base md:text-xl lg:text-2xl hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300" href="#top">Inicio</a>
-        <a class="no-underline text-text-light dark:text-text-dark text-base md:text-xl lg:text-2xl hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300" href="#experiencia">Experiencia</a>
-        <a class="no-underline text-text-light dark:text-text-dark text-base md:text-xl lg:text-2xl hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300" href="#proyectos">Proyectos</a>
-        <a id="about-link" class="no-underline text-text-light dark:text-text-dark text-base md:text-xl lg:text-2xl hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300" href="#conoceme">Conoceme</a>
-        <a class="no-underline text-text-light dark:text-text-dark text-base md:text-xl lg:text-2xl hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300" href="#contacto">Contacto</a>
-    </nav>
+---
+import { Image } from 'astro:assets';
+import veronicaHeaderImg from '/public/veronica2.JPG';
+---
+
+<header
+  class="flex flex-col justify-between items-center md:flex-row md:justify-around sticky top-0 bg-background-light/70 dark:bg-background-dark/70 backdrop-blur-sm z-10 transition-all duration-500"
+>
+  <figure
+    id="about-img"
+    class="overflow-hidden bg-gradient-to-br from-accent-light/80 to-accent-light/60 dark:from-accent-dark/80 dark:to-accent-dark/60 rounded-lg shadow-2xl shadow-accent-light/30 dark:shadow-accent-dark/30 rounded-b-2xl md:rounded-b-full transform transition-all duration-700 ease-out size-14 md:size-24 lg:size-28 hover:scale-110 hover:shadow-accent-light/50 dark:hover:shadow-accent-dark/50 hover:rotate-3"
+  >
+    <Image
+      id="main-img"
+      src={veronicaHeaderImg}
+      alt="Fotografía de Verónica García, desarrolladora frontend y diseñadora UI/UX"
+      class="w-full h-full object-cover cursor-pointer transition-transform duration-500"
+      width={112}
+      height={112}
+      loading="eager"
+      format="webp"
+    />
+  </figure>
+  <button
+    id="menu-button"
+    class="block md:hidden text-secondary focus:outline-none mt-4 md:mt-0"
+    aria-label="Abrir menú de navegación"
+    aria-expanded="false"
+    aria-controls="nav-menu"
+  >
+    <svg
+      class="w-8 h-8"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16m-7 6h7"></path>
+    </svg>
+  </button>
+  <nav
+    id="nav-menu"
+    class="hidden flex-col md:flex md:flex-row mt-2 md:mt-0 space-y-4 md:space-y-0 md:space-x-6 items-center"
+  >
+    <a
+      class="relative no-underline text-text-light dark:text-text-dark text-base md:text-xl lg:text-2xl font-medium hover:text-accent-light dark:hover:text-accent-dark transition-all duration-300 hover:scale-105 px-2 py-1 rounded-lg hover:bg-accent-light/10 dark:hover:bg-accent-dark/10"
+      href="#main-content">Inicio</a
+    >
+    <a
+      class="relative no-underline text-text-light dark:text-text-dark text-base md:text-xl lg:text-2xl font-medium hover:text-accent-light dark:hover:text-accent-dark transition-all duration-300 hover:scale-105 px-2 py-1 rounded-lg hover:bg-accent-light/10 dark:hover:bg-accent-dark/10"
+      href="#experiencia">Experiencia</a
+    >
+    <a
+      class="relative no-underline text-text-light dark:text-text-dark text-base md:text-xl lg:text-2xl font-medium hover:text-accent-light dark:hover:text-accent-dark transition-all duration-300 hover:scale-105 px-2 py-1 rounded-lg hover:bg-accent-light/10 dark:hover:bg-accent-dark/10"
+      href="#proyectos">Proyectos</a
+    >
+    <a
+      id="about-link"
+      class="relative no-underline text-text-light dark:text-text-dark text-base md:text-xl lg:text-2xl font-medium hover:text-accent-light dark:hover:text-accent-dark transition-all duration-300 hover:scale-105 px-2 py-1 rounded-lg hover:bg-accent-light/10 dark:hover:bg-accent-dark/10"
+      href="#conoceme">Conoceme</a
+    >
+    <a
+      class="relative no-underline text-text-light dark:text-text-dark text-base md:text-xl lg:text-2xl font-medium hover:text-accent-light dark:hover:text-accent-dark transition-all duration-300 hover:scale-105 px-2 py-1 rounded-lg hover:bg-accent-light/10 dark:hover:bg-accent-dark/10"
+      href="#contacto">Contacto</a
+    >
+  </nav>
 </header>
 
 <script>
+  /**
+   * Header Interactive Functionality
+   * Manages profile image interactions and mobile menu toggle
+   */
+
+  // DOM Element References
+  const getDOMElements = () => {
     const aboutImg = document.getElementById('about-img');
-    const mainImg = document.getElementById('main-img') as HTMLImageElement;;
+    const mainImg = document.getElementById('main-img') as HTMLImageElement;
     const aboutLink = document.getElementById('about-link');
     const menuButton = document.getElementById('menu-button');
     const navMenu = document.getElementById('nav-menu');
 
-    aboutImg.addEventListener('mouseover', function() {
-        aboutLink.innerText = 'Conoceme';
-        aboutLink.classList.remove('no-underline');
-        aboutLink.classList.add('underline');
-        mainImg.classList.add('rotate-180');
-    });
+    // Validate all elements exist
+    if (!aboutImg || !mainImg || !aboutLink || !menuButton || !navMenu) {
+      console.warn('Header: Required DOM elements not found');
+      return null;
+    }
 
-    aboutImg.addEventListener('mouseout', function() {
-        aboutLink.innerText = 'Conoceme';
-        aboutLink.classList.remove('underline');
-        mainImg.classList.remove('rotate-180');
-    });
+    return { aboutImg, mainImg, aboutLink, menuButton, navMenu };
+  };
 
-    aboutImg.addEventListener('click', function() {
-        window.location.href = '/#conoceme';
-    });
+  // Profile Image Hover Effects
+  const initializeImageHoverEffects = (elements: ReturnType<typeof getDOMElements>) => {
+    if (!elements) return;
 
-    mainImg.addEventListener('transitionend', function() {
-        if (mainImg.classList.contains('rotate-180')) {
-            mainImg.src = "/veronica.JPG";
-        } else {
-            mainImg.src = "/veronica2.JPG";
-        }
-    });
+    const { aboutImg, aboutLink, mainImg } = elements;
 
-    menuButton.addEventListener('click', function() {
-        navMenu.classList.toggle('hidden');
-        navMenu.classList.toggle('flex');
-    });
+    const handleMouseOver = () => {
+      aboutLink.innerText = 'Conoceme';
+      aboutLink.classList.remove('no-underline');
+      aboutLink.classList.add('underline');
+      mainImg.classList.add('rotate-180');
+    };
+
+    const handleMouseOut = () => {
+      aboutLink.innerText = 'Conoceme';
+      aboutLink.classList.remove('underline');
+      mainImg.classList.remove('rotate-180');
+    };
+
+    aboutImg.addEventListener('mouseover', handleMouseOver);
+    aboutImg.addEventListener('mouseout', handleMouseOut);
+  };
+
+  // Profile Image Click Navigation
+  const initializeImageClickNavigation = (elements: ReturnType<typeof getDOMElements>) => {
+    if (!elements) return;
+
+    const { aboutImg } = elements;
+
+    const handleImageClick = () => {
+      window.location.href = '/#conoceme';
+    };
+
+    aboutImg.addEventListener('click', handleImageClick);
+  };
+
+  // Image Transition Effects
+  const initializeImageTransitionEffects = (elements: ReturnType<typeof getDOMElements>) => {
+    if (!elements) return;
+
+    const { mainImg } = elements;
+
+    const handleTransitionEnd = () => {
+      if (mainImg.classList.contains('rotate-180')) {
+        mainImg.src = '/veronica.JPG';
+      } else {
+        mainImg.src = '/veronica2.JPG';
+      }
+    };
+
+    mainImg.addEventListener('transitionend', handleTransitionEnd);
+  };
+
+  // Mobile Menu Toggle
+  const initializeMobileMenuToggle = (elements: ReturnType<typeof getDOMElements>) => {
+    if (!elements) return;
+
+    const { menuButton, navMenu } = elements;
+
+    const handleMenuToggle = () => {
+      navMenu.classList.toggle('hidden');
+      navMenu.classList.toggle('flex');
+
+      // Update ARIA attributes for accessibility
+      const isExpanded = !navMenu.classList.contains('hidden');
+      menuButton.setAttribute('aria-expanded', isExpanded.toString());
+    };
+
+    menuButton.addEventListener('click', handleMenuToggle);
+  };
+
+  // Main Initialization Function
+  const initializeHeader = () => {
+    const elements = getDOMElements();
+
+    if (!elements) {
+      return;
+    }
+
+    // Initialize all functionality
+    initializeImageHoverEffects(elements);
+    initializeImageClickNavigation(elements);
+    initializeImageTransitionEffects(elements);
+    initializeMobileMenuToggle(elements);
+  };
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeHeader);
+  } else {
+    initializeHeader();
+  }
 </script>
-   
+
 <style>
-    .rotate-180 {
-        transform: rotateY(180deg);
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    nav a {
-      animation: fadeIn 0.5s ease-out forwards;
+  .rotate-180 {
+    transform: rotateY(180deg);
+  }
+  @keyframes fadeIn {
+    from {
       opacity: 0;
+      transform: translateY(-20px);
     }
-  
-    nav a:nth-child(1) { animation-delay: 0.1s; }
-    nav a:nth-child(2) { animation-delay: 0.2s; }
-    nav a:nth-child(3) { animation-delay: 0.3s; }
-    nav a:nth-child(4) { animation-delay: 0.4s; }
-    nav a:nth-child(5) { animation-delay: 0.5s; }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  nav a {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  nav a:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  nav a:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  nav a:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  nav a:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  nav a:nth-child(5) {
+    animation-delay: 0.5s;
+  }
 </style>
-
-

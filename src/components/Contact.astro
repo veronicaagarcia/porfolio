@@ -1,33 +1,32 @@
 ---
-import Github from "../icons/Github.astro";
-import Gmail from "../icons/Gmail.astro";
-import Linkedin from "../icons/Linkedin.astro";
-import Form from "./Form";
+import SocialLinks from './SocialLinks.astro';
+import Form from './Form';
 ---
-<div class="flex flex-col items-center md:flex-row md:justify-between pb-10">
-    
-    <div class="mb-1 w-full md:w-1/2 font-extralight text-justify text-base md:text-lg text-text-light dark:text-text-dark">
-        <p class="mb-2">Estoy siempre interesada en nuevas oportunidades y colaboraciones. Si tienes alguna pregunta, propuesta de proyecto, o simplemente deseas saludar, no dudes en ponerte en <strong class="text-primary-light dark:text-primary-dark">contacto conmigo</strong> a través del siguiente formulario. </p>
-        <p class="mb-2">Además, puedes descargar mi CV, seguirme en GitHub, o conectarte conmigo en LinkedIn.</p>
-        <p class="text-center"><strong class="text-primary-light dark:text-primary-dark">¡</strong>Espero saber de ti pronto<strong class="text-primary-light dark:text-primary-dark">!</strong></p>
-    </div>
-    <div class="w-full md:w-1/2 md:pl-4 flex flex-col justify-center items-center space-y-4">
-        
-        <a class="mt-4 md:mt-0 flex items-center text-secondary hover:text-primary-light dark:hover:text-primary-dark cursor-pointer text-lg" href="https://github.com/veronicaagarcia" target="_blank" rel="noopener noreferrer">
-          <Github class="w-6 h-6 mr-2" />
-          GitHub
-        </a>
-        <a class="flex items-center text-secondary hover:text-primary-light dark:hover:text-primary-dark cursor-pointer text-lg" href="https://www.linkedin.com/in/veronicaagarcia/" target="_blank" rel="noopener noreferrer">
-          <Linkedin class="w-6 h-6 mr-2" />
-          LinkedIn
-        </a>
-        <a class="flex items-center text-secondary hover:text-primary-light dark:hover:text-primary-dark cursor-pointer text-lg" href="mailto:veroagarcia90@gmail.com" target="_blank" rel="noopener noreferrer">
-          <Gmail class="w-6 h-6 mr-2" />
-          veroagarcia90@gmail.com
-        </a>
 
-        <a href="https://mibucketpersonal.s3.sa-east-1.amazonaws.com/CV-VeronicaGarcia.pdf" download class="p-2 rounded text-secondary hover:text-primary-light dark:hover:text-primary-dark underline">Descargar CV</a>
-    </div>
+<div class="flex flex-col items-center md:flex-row md:justify-between pb-10">
+  <div
+    class="mb-8 md:mb-1 w-full md:w-1/2 font-extralight text-justify text-base md:text-lg text-text-light dark:text-text-dark"
+  >
+    <p class="mb-4 leading-relaxed">
+      ¿Tienes un proyecto desafiante en mente? Me apasiona colaborar con equipos que buscan
+      <strong class="text-primary-light dark:text-primary-dark"
+        >crear experiencias digitales excepcionales</strong
+      >. Ya sea que necesites desarrollo frontend, diseño UI/UX o consultoría estratégica, estoy
+      aquí para transformar tus ideas en realidades digitales impactantes.
+    </p>
+    <p class="mb-4 leading-relaxed">
+      Siempre estoy abierta a nuevas oportunidades, colaboraciones interesantes y conversaciones
+      sobre tecnología y diseño. <strong class="text-primary-light dark:text-primary-dark">
+        ¡Conectemos y creemos algo increíble juntos!</strong
+      >
+    </p>
+    <p class="text-center md:text-left font-medium text-accent-light dark:text-accent-dark">
+      Respondo dentro de 24 horas ✨
+    </p>
+  </div>
+  <div class="w-full md:w-1/2 md:pl-8">
+    <SocialLinks variant="contact" showCV={true} />
+  </div>
 </div>
 
-<Form client:visible/>
+<Form client:visible />
